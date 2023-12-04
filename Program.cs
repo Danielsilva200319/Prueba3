@@ -8,7 +8,6 @@ internal class Program
         Console.WriteLine("------------------");
         Console.WriteLine("1. Cantidad");
         Console.WriteLine("2. Registrarse");
-        Console.WriteLine("3. Votación");
         Console.WriteLine("0. Salir");
         Console.WriteLine("------------------");
         int opcion = Convert.ToInt32(Console.ReadLine());
@@ -18,13 +17,26 @@ internal class Program
             switch (opcion)
             {
                 case 1:
-                    Cantidad();
+                    Console.Write("\nIngrese la cantidad de Universidades participantes: ");
+                    int Cantidad = Convert.ToInt32(Console.ReadLine());
                     break;
                 case 2:
-                    Registrarse();
-                    break;
-                case 3:
-                    Votos();
+                    Console.Write("\nIngrese el nombre de la universidad: ");
+                    string universidad = Console.ReadLine().ToUpper();
+                    Console.WriteLine("\n    Votación");
+                    Console.WriteLine("-------------------");
+                    Console.WriteLine("A. Aceptar");
+                    Console.WriteLine("R. Rechazar");
+                    Console.WriteLine("N. Nulo");
+                    Console.WriteLine("B. Blanco");
+                    Console.WriteLine("-------------------");
+                    string votar = Console.ReadLine();
+                    foreach (var item in universidad)
+                    {
+                        Console.WriteLine($"Universidad: {universidad}");
+                        Console.WriteLine($"Voto: {votar}");
+                        Console.WriteLine($"{universidad}: {votar.Count()}");
+                    }
                     break;
                 case 0:
                     Console.WriteLine("GRACIAS");
@@ -35,31 +47,5 @@ internal class Program
                     break;
             }
         }
-    }
-    public static void Cantidad()
-    {
-        Console.Clear();
-        Console.Write("\nIngrese la cantidad de Universidades participantes: ");
-        int Cantidad = Convert.ToInt32(Console.ReadLine());
-        return;
-    }
-    public static void Registrarse()
-    {
-        Console.Clear();
-        Console.Write("\nIngrese el nombre de la universidad: ");
-        string universidad = Console.ReadLine();
-        return;
-    }
-    public static void Votos()
-    {
-        Console.Clear();
-        Console.WriteLine("VOTACIÓN");
-        Console.WriteLine("A. Aceptar");
-        Console.WriteLine("R. Rechazar");
-        Console.WriteLine("N. Nulo");
-        Console.WriteLine("B. Blanco");
-        Console.Write("Ingrese una Letra: ");
-        string votar = Console.ReadLine().ToUpper();
-        Console.WriteLine("");
     }
 }
