@@ -58,21 +58,8 @@ internal class Program
         Console.WriteLine("R. Rechazar");
         Console.WriteLine("N. Nulo");
         Console.WriteLine("B. Blanco");
-        Console.WriteLine("X. Mostrar Votos");
-        Console.WriteLine("I. Regresar al menu");
         Console.Write("Ingrese una Letra: ");
         string votar = Console.ReadLine().ToUpper();
-        if (votar == "A" || votar == "R" || votar == "N" || votar == "B")
-        {
-            Console.WriteLine("Gracias por su votación");
-        }
-        else if (votar == "X")
-        {
-            return;
-        }
-        else
-        {
-
-        }
+        Console.WriteLine("");
     }
 }
